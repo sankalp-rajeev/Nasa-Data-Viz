@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Galactic Garden: A Blossoming Universe | Sankalp Rajeev | Email: srajeev@asu.edu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <h1>HW 5 | Galactic Garden: A Blossoming Universe</h1>
+    <h2>Sankalp Rajeev | Email: srajeev@asu.edu</h2>
+    <p id="visualization-description" style="text-align:center; margin-top: 20px;">
+        Welcome to the Galactic Garden, a captivating journey through the universe's exoplanets, each depicted as a
+        unique flower. Here's how to interpret this cosmic flora:
+    <ul>
+        <li><strong>Petal Size:</strong> The larger the petal, the greater the planet's radius, showcasing its size.
+        </li>
+        <li><strong>Petal Shape:</strong> Each petal's curved path gives the flower its distinct appearance, mirroring
+            the unique nature of each planet.</li>
+        <li><strong>Stem Length:</strong> Represents the distance of the planet from Earth. A longer stem means the
+            planet is farther away.</li>
+        <li><strong>Position in the Garden:</strong> Indicates the year of the planet's discovery. Flowers positioned to
+            the right represent more recent discoveries.</li>
+        <li><strong>Color Coding:</strong> Each color signifies a different type of planet: red for Gas Giants, grey for
+            Terrestrial planets, blue for Neptune-like, and green for Super Earths. This helps in quickly identifying
+            the planet type.</li>
+    </ul>
+    Explore this interactive garden by selecting different planet types from the filter, and click on any flower to
+    discover more about that exoplanet. Simply click anywhere outside the details panel to close it.
+    </p>
+
+
+    <section id="filterSection">
+        <div id="filterDropdown">
+            <label for="planetTypeFilter">Filter by Planet Type:</label>
+            <select id="planetTypeFilter">
+                <option value="all">All</option>
+                <option value="Gas Giant">Gas Giant</option>
+                <option value="Terrestrial">Terrestrial</option>
+                <option value="Neptune-like">Neptune-like</option>
+                <option value="Super Earth">Super Earth</option>
+
+            </select>
+        </div>
+    </section>
+    <div id="visualization-container">
+        <svg id="visualization-svg"></svg>
+    </div>
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+            </div>
+        </div>
+    </div>
+    <div id="detailsSidebar" class="sidebar">
+        <span class="close-icon" onclick="closeSidebar()">&#10006;</span>
+        <div id="sidebar-content">
+        </div>
+    </div>
+
+    <footer>
+        <p>Sankalp Rajeev | Email: srajeev@asu.edu</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
